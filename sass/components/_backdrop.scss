@@ -1,0 +1,217 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.modal {
+  position: absolute;
+  padding: 40px;
+  min-width: 528px;
+  min-height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal__close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  fill: #000000;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    fill: $accent-color;
+    cursor: pointer;
+  }
+}
+
+.modal__form-title {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $secondary-text-color;
+}
+
+.modal__form-field {
+  position: relative;
+  margin-bottom: 10px;
+
+  &:focus-within .form-icon {
+    fill: $accent-color;
+  }
+}
+
+.modal__form-agreement-field {
+  padding-left: 12px;
+  margin-bottom: 30px;
+}
+
+.modal__form-label {
+  display: block;
+  margin-bottom: 4px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  text-align: start;
+  color: $primary-text-color;
+}
+
+.modal__form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 18px;
+  height: 18px;
+}
+
+.modal__form-input {
+  padding: 11px 42px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .modal__form-field:focus-within &,
+  .modal__form-field:focus-within textarea {
+    border-color: $accent-color;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.modal__form-comment:focus-within textarea {
+  border: 1px solid $accent-color;
+  cursor: pointer;
+  outline: none;
+
+  & textarea::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+textarea {
+  padding: 12px 16px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__form-comment {
+  margin-bottom: 30px;
+}
+
+.modal__form-agreement {
+  display: flex;
+  align-items: center;
+}
+
+.modal__agreement-checkbox {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:checked ~ .modal__check-icon {
+    fill: #ffffff;
+    opacity: 1;
+  }
+}
+
+.modal__agreement-link {
+  color: $accent-color;
+  text-decoration: underline;
+}
+
+.modal__agreement-text {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+
+  &::before {
+    content: " ";
+    display: inline-block;
+    margin-right: 7px;
+    width: 16px;
+    height: 15px;
+    border: 2px solid $secondary-text-color;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+}
+
+.modal__check-icon {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+}
+
+.modal__form-button {
+  display: block;
+  padding: 10px 56px;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  background: $accent-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.modal__form-modal-btn:hover,
+.modal__form-modal-btn:focus {
+  background-color: #188ce8;
+}
